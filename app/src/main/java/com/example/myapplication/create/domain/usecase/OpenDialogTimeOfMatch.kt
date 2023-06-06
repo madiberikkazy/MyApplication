@@ -4,7 +4,8 @@ import android.app.Dialog
 import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import java.util.*
+import java.util.Calendar
+import java.util.Date
 
 class OpenDialogTimeOfMatch(private val onTimeSelected: (Date) -> Unit) : DialogFragment() {
 

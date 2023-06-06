@@ -4,7 +4,8 @@ import android.app.DatePickerDialog
 import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import java.util.*
+import java.util.Calendar
+import java.util.Date
 
 class OpenDialogDateOfMatch(private val onDateSelected: (Date) -> Unit) : DialogFragment() {
 
