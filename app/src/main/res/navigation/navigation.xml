@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomNavigationView"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.myapplication.lists.ListsFragment"
+        tools:layout="@layout/fragment_lists"></fragment>
+
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.example.myapplication.messages.MessagesFragment"
+        tools:layout="@layout/fragment_messages" />
+
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="CreateFragment"
+        tools:layout="@layout/fragment_create" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myapplication.account.ProflieFragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/createdFragment"
+        android:name="com.example.myapplication.created.CreatedFragment"
+        tools:layout="@layout/fragment_created"></fragment>
+</navigation>

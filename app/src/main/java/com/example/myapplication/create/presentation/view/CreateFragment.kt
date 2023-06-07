@@ -1,10 +1,9 @@
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.myapplication.R
 import com.example.myapplication.create.domain.usecase.OpenDialogAddressOfMatch
 import com.example.myapplication.create.domain.usecase.OpenDialogDateOfMatch
@@ -20,20 +19,15 @@ import java.util.Locale
 
 class CreateFragment : Fragment() {
 
-    private lateinit var binding: FragmentCreateBinding
+    private val binding: FragmentCreateBinding by viewBinding(FragmentCreateBinding::bind)
+
     private lateinit var textView_address: TextView
     private lateinit var textView_date: TextView
     private lateinit var textView_time: TextView
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentCreateBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.javaClass
 
         textView_address = view.findViewById(R.id.textView_address)
         textView_address.setOnClickListener {

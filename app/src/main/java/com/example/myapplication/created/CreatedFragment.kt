@@ -1,19 +1,18 @@
 package com.example.myapplication.created
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.myapplication.R
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.myapplication.databinding.FragmentCreatedBinding
+import com.example.myapplication.databinding.FragmentProfileBinding
 
 class CreatedFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_created, container, false)
-    }
+    private val binding: FragmentCreatedBinding by viewBinding(FragmentCreatedBinding::bind)
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.javaClass
+    }
 }
