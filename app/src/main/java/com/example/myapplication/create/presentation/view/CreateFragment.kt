@@ -1,9 +1,10 @@
-package com.example.myapplication.create
+package com.example.myapplication.create.presentation.view
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.myapplication.R
 import com.example.myapplication.create.domain.usecase.OpenDialogAddressOfMatch
@@ -12,6 +13,7 @@ import com.example.myapplication.create.domain.usecase.OpenDialogTimeOfMatch
 import com.example.myapplication.create.domain.usecase.OpenDialogTypeOfSports
 import com.example.myapplication.create.presentation.viewmodel.CreateViewModel
 import com.example.myapplication.databinding.FragmentCreateBinding
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -49,7 +51,9 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
 
     private fun showDatePickerDialog() {
         val datePickerDialog = OpenDialogDateOfMatch { selectedDate ->
-            updateSelectedDate(selectedDate)
+            viewLifecycleOwner.lifecycleScope.launch {
+                updateSelectedDate(selectedDate)
+            }
         }
         datePickerDialog.show(parentFragmentManager, "DatePickerDialog")
     }
@@ -61,7 +65,9 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
 
     private fun showTimePickerDialog() {
         val timePickerDialog = OpenDialogTimeOfMatch { selectedTime ->
-            updateSelectedTime(selectedTime)
+            viewLifecycleOwner.lifecycleScope.launch {
+                updateSelectedTime(selectedTime)
+            }
         }
         timePickerDialog.show(parentFragmentManager, "TimePickerDialog")
     }
