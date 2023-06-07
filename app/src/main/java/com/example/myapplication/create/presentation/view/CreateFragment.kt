@@ -12,9 +12,6 @@ import com.example.myapplication.create.domain.usecase.OpenDialogTimeOfMatch
 import com.example.myapplication.create.domain.usecase.OpenDialogTypeOfSports
 import com.example.myapplication.create.presentation.viewmodel.CreateViewModel
 import com.example.myapplication.databinding.FragmentCreateBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -52,9 +49,7 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
 
     private fun showDatePickerDialog() {
         val datePickerDialog = OpenDialogDateOfMatch { selectedDate ->
-            GlobalScope.launch(Dispatchers.Main) {
-                updateSelectedDate(selectedDate)
-            }
+            updateSelectedDate(selectedDate)
         }
         datePickerDialog.show(parentFragmentManager, "DatePickerDialog")
     }
@@ -66,9 +61,7 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
 
     private fun showTimePickerDialog() {
         val timePickerDialog = OpenDialogTimeOfMatch { selectedTime ->
-            GlobalScope.launch(Dispatchers.Main) {
-                updateSelectedTime(selectedTime)
-            }
+            updateSelectedTime(selectedTime)
         }
         timePickerDialog.show(parentFragmentManager, "TimePickerDialog")
     }
