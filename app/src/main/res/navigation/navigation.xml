@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.myapplication.lists.ListsFragment"
-        tools:layout="@layout/fragment_lists"></fragment>
+        tools:layout="@layout/fragment_lists" />
 
     <fragment
         android:id="@+id/messagesFragment"
@@ -28,5 +28,5 @@
     <fragment
         android:id="@+id/createdFragment"
         android:name="com.example.myapplication.created.CreatedFragment"
-        tools:layout="@layout/fragment_created"></fragment>
+        tools:layout="@layout/fragment_created" />
 </navigation>
